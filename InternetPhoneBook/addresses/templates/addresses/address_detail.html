@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3>Details {{object.name}} {{object.second_name}} contact</h3>
+
+<dl>
+    <dt>Name</dt>
+    <dd>{{object.name}}</dd>
+    <dt>Scond name</dt>
+    <dd>{{object.second_name}}</dd>
+    <dt>Phone</dt>
+    <dd>{{object.phone}}</dd>
+    <dt>E-mail</dt>
+    <dd>{{object.email_address}}</dd>
+</dl>
+
+{% endblock %}

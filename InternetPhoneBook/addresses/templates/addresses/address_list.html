@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+
+<di>
+    <a class="btn btn-success text-white m-4" href="{% url 'address_new' %}">Add</a>
+</di>
+
+<table class="table table-hover">
+    <thead class="thead-dark">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Second name</th>
+        <th>Phone</th>
+        <th>E-mail</th>
+        <th>created</th>
+        <th>updated</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for address in object_list %}
+        <tr>
+            <td>{{address.id}}</td>
+            <td>{{address.name}}</td>
+            <td>{{address.second_name}}</td>
+            <td>{{address.phone}}</td>
+            <td>{{address.email_address}}</td>
+            <td>{{address.created}}</td>
+            <td>{{address.updated}}</td>
+            <td>
+                <a class="btn btn-warning text-white" href="{% url 'address_details' address.id %}">Details</a>
+                <a class="btn btn-info text-white" href="{% url 'address_edit' address.id %}">Edit</a>
+                <a class="btn btn-danger text-white" href="{% url 'address_delete' address.id %}">Delete</a>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+
+{% endblock %}
